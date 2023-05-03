@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <h3>Confirmation Page</h3>
+{% endblock %}
+
+{% block content %}
+    <div>
+        <center>
+        <form method = "post">
+            {% csrf_token %}
+            <h3 >Do you really want to delete this record?</h3>
+            <input type= "submit" value = "YES" class = "btn btn-danger">
+            <button class="btn btn-warning"><a href="{% url 'showstudent_url' %}">NO</a></button>
+        </form>
+    </center>
+    </div>
+{% endblock %}

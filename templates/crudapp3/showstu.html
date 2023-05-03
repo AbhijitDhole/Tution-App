@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>SHOW STUDENTS</title>
+{% endblock %}
+
+{% block content %}
+<table class="table table-striped table-dark">
+    <thead>
+      <tr>
+        <th scope="col">STUDENT ID</th>
+        <th scope="col">NAME</th>
+        <th scope="col">DATE OF BIRTH</th>
+        <th scope="col">ADDRESS</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for i in obj %}
+      <tr>
+        
+        <td>{{i.s_id}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.dob}}</td>
+        <td>{{i.address}}</td>
+        <td><button type="button" class="btn btn-warning"><a href="{% url 'update_url' i.s_id  %}">UPDATE</a></button></td>
+        <td><button type="button" class="btn btn-danger"><a href= "{% url 'delete_url' i.s_id %}">DELETE</a></button></td>
+
+
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

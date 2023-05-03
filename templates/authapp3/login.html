@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Login form</title>
+{% endblock %}
+
+
+{% block content  %}
+<center>
+    <div class= "container btn btn-warning " >
+        <form method ="post">
+            {% csrf_token %}
+            <form>
+                <div class="form-group">
+                  <label for="un">Enter Username</label>
+                  <input type="text" class="form-control" id="un" aria-describedby="emailHelp" placeholder="Enter username">
+                  <small id="emailHelp" class="form-text text-muted">We'll never share your username with anyone else.</small>
+                </div>
+                <div class="form-group">
+                  <label for="pw">Enter Password</label>
+                  <input type="password" class="form-control" id="pw" placeholder="Password">
+                </div>
+                <button type="submit" class="btn btn-secondary"><a href="{% url 'showstudent_url' %}">Login</a></button>
+              </form>
+
+        </form>
+    </div>
+</center>
+{% endblock %}

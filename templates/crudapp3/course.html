@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Course Page</title>
+{% endblock %}
+
+{% block content %}
+<div class="container jumbotron">
+<form method = "post">
+    <h3 class="text-center">Courses Page</h3>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type= "submit" value= "ADD COURSES"  class="btn btn-success">
+    <input type = "reset" value = "RESET"  class= "btn btn-warning">
+</form>
+</div>
+{%  endblock %}
